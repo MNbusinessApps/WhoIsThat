@@ -1,0 +1,55 @@
+{
+  "name": "who-is-that-game",
+  "version": "1.0.0",
+  "description": "A joyful sound-matching adventure game for toddlers ages 1-4. Learn animals, environments, and sound association through touch, color, and rhythm.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "toddler",
+    "educational",
+    "games",
+    "sound",
+    "animals",
+    "learning",
+    "kids",
+    "preschool",
+    "interactive",
+    "web-game",
+    "touch-friendly",
+    "accessibility"
+  ],
+  "author": {
+    "name": "MiniMax Agent",
+    "email": "contact@example.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/who-is-that-game.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/who-is-that-game/issues"
+  },
+  "homepage": "https://github.com/yourusername/who-is-that-game#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "devDependencies": {},
+  "dependencies": {},
+  "files": [
+    "index.html",
+    "scripts/",
+    "styles/",
+    "README.md",
+    "LICENSE"
+  ]
+}

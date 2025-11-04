@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Is That!? - A Sound-Matching Adventure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta name="description" content="A joyful sound-recognition game for toddlers ages 1-4. Learn animals, environments, and sound association through touch, color, and rhythm.">
+    <meta name="author" content="MiniMax Agent">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2>Loading Who Is That!?</h2>
+            <p>Get ready for fun!</p>
+        </div>
+    </div>
+
+    <!-- Main Game Container -->
+    <div id="game-container" class="game-container hidden">
+        <!-- World Selection Screen -->
+        <div id="world-selection" class="world-selection">
+            <header class="game-header">
+                <h1 class="game-title">Who Is That!?</h1>
+                <p class="game-subtitle">Choose a world to explore!</p>
+            </header>
+            
+            <div class="worlds-carousel">
+                <div class="world-card" data-world="farm">
+                    <div class="world-icon farm-bg">
+                        <svg width="96" height="96" viewBox="0 0 96 96" fill="none">
+                            <path d="M20 48L48 20L76 48V80H20V48Z" fill="currentColor"/>
+                            <path d="M40 20L48 12L56 20V28H40V20Z" fill="#FF5A5F"/>
+                            <rect x="36" y="56" width="8" height="24" fill="#8B4513"/>
+                            <rect x="52" y="56" width="8" height="24" fill="#8B4513"/>
+                            <rect x="44" y="64" width="8" height="16" fill="#8B4513"/>
+                        </svg>
+                    </div>
+                    <h3>Farm Friends</h3>
+                    <p class="host-animal">🐖 Pig - Oink-oink!</p>
+                </div>
+
+                <div class="world-card" data-world="ocean">
+                    <div class="world-icon ocean-bg">
+                        <svg width="96" height="96" viewBox="0 0 96 96" fill="none">
+                            <circle cx="48" cy="48" r="36" fill="currentColor"/>
+                            <path d="M32 40C32 40 38 38 48 40C58 42 64 40 64 40C64 40 58 44 48 44C38 44 32 40 32 40Z" fill="#FFB6C1"/>
+                            <circle cx="42" cy="45" r="2" fill="#000"/>
+                            <circle cx="54" cy="45" r="2" fill="#000"/>
+                            <path d="M46 50Q48 52 50 50" stroke="#000" stroke-width="1" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Ocean World</h3>
+                    <p class="host-animal">🐬 Dolphin - Ee-ee-ee!</p>
+                </div>
+
+                <div class="world-card" data-world="jungle">
+                    <div class="world-icon jungle-bg">
+                        <svg width="96" height="96" viewBox="0 0 96 96" fill="none">
+                            <circle cx="48" cy="48" r="36" fill="currentColor"/>
+                            <circle cx="42" cy="44" r="3" fill="#000"/>
+                            <circle cx="54" cy="44" r="3" fill="#000"/>
+                            <circle cx="38" cy="42" r="2" fill="#000"/>
+                            <circle cx="58" cy="42" r="2" fill="#000"/>
+                            <path d="M42 50Q48 52 54 50" stroke="#000" stroke-width="2" fill="none"/>
+                            <path d="M36 48L40 44M60 48L56 44" stroke="#8B4513" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <h3>Jungle Jive</h3>
+                    <p class="host-animal">🐒 Monkey - Oo-oo-ah-ah!</p>
+                </div>
+
+                <div class="world-card" data-world="savanna">
+                    <div class="world-icon savanna-bg">
+                        <svg width="96" height="96" viewBox="0 0 96 96" fill="none">
+                            <circle cx="48" cy="48" r="36" fill="currentColor"/>
+                            <circle cx="42" cy="44" r="4" fill="#FFD700"/>
+                            <circle cx="54" cy="44" r="4" fill="#FFD700"/>
+                            <ellipse cx="48" cy="52" rx="8" ry="6" fill="#FFD700"/>
+                            <path d="M36 40L48 36L60 40" stroke="#FF8C00" stroke-width="3" fill="none"/>
+                            <circle cx="35" cy="35" r="2" fill="#FF8C00"/>
+                            <circle cx="61" cy="35" r="2" fill="#FF8C00"/>
+                        </svg>
+                    </div>
+                    <h3>Savanna Zone</h3>
+                    <p class="host-animal">🦁 Lion - Roaaar!</p>
+                </div>
+
+                <div class="world-card" data-world="icy">
+                    <div class="world-icon icy-bg">
+                        <svg width="96" height="96" viewBox="0 0 96 96" fill="none">
+                            <circle cx="48" cy="48" r="36" fill="currentColor"/>
+                            <ellipse cx="48" cy="54" rx="12" ry="16" fill="#000"/>
+                            <circle cx="42" cy="40" r="2" fill="#000"/>
+                            <circle cx="54" cy="40" r="2" fill="#000"/>
+                            <ellipse cx="40" cy="44" rx="3" ry="4" fill="#FFA500"/>
+                            <ellipse cx="56" cy="44" rx="3" ry="4" fill="#FFA500"/>
+                        </svg>
+                    </div>
+                    <h3>Icy Island</h3>
+                    <p class="host-animal">🐧 Penguin - Wawk-wawk!</p>
+                </div>
+
+                <div class="world-card" data-world="home">
+                    <div class="world-icon home-bg">
+                        <svg width="96" height="96" viewBox="0 0 96 96" fill="none">
+                            <path d="M48 20L20 40V80H76V40L48 20Z" fill="currentColor"/>
+                            <rect x="36" y="48" width="8" height="12" fill="#8B4513"/>
+                            <rect x="52" y="48" width="8" height="12" fill="#8B4513"/>
+                            <circle cx="40" cy="72" r="2" fill="#FFD700"/>
+                            <circle cx="56" cy="72" r="2" fill="#FFD700"/>
+                            <path d="M44 24L48 20L52 24" stroke="#FF5A5F" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Home Sweet Home</h3>
+                    <p class="host-animal">🐶 Dog - Woof-woof!</p>
+                </div>
+
+                <div class="world-card" data-world="forest">
+                    <div class="world-icon forest-bg">
+                        <svg width="96" height="96" viewBox="0 0 96 96" fill="none">
+                            <circle cx="48" cy="48" r="36" fill="currentColor"/>
+                            <circle cx="48" cy="44" r="8" fill="#32CD32"/>
+                            <ellipse cx="48" cy="56" rx="6" ry="8" fill="#228B22"/>
+                            <circle cx="44" cy="42" r="2" fill="#000"/>
+                            <circle cx="52" cy="42" r="2" fill="#000"/>
+                            <circle cx="40" cy="60" r="1" fill="#FFD700"/>
+                            <circle cx="56" cy="60" r="1" fill="#FFD700"/>
+                            <circle cx="48" cy="62" r="1" fill="#FFD700"/>
+                        </svg>
+                    </div>
+                    <h3>Forest Pond</h3>
+                    <p class="host-animal">🐸 Frog - Ribbit!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Play Screen -->
+        <div id="game-play" class="game-play hidden">
+            <header class="game-header">
+                <button id="back-btn" class="back-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back
+                </button>
+                <h2 id="world-title" class="world-title">World Name</h2>
+                <div class="progress-bar">
+                    <div class="cookie-slot empty"></div>
+                    <div class="cookie-slot empty"></div>
+                    <div class="cookie-slot empty"></div>
+                    <div class="cookie-slot empty"></div>
+                    <div class="cookie-slot empty"></div>
+                </div>
+            </header>
+
+            <div class="game-content">
+                <div class="host-section">
+                    <button id="play-sound-btn" class="play-sound-btn">
+                        <div class="host-animal-display">
+                            <div id="host-animal-img" class="host-animal-img"></div>
+                            <svg class="play-icon" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="20" fill="rgba(255,255,255,0.9)"/>
+                                <path d="M18 15L18 33L30 24L18 15Z" fill="#FF5A5F"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <p class="instruction-text">Tap the animal that makes this sound!</p>
+                </div>
+
+                <div id="animal-choices" class="animal-choices">
+                    <!-- Animal choice cards will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Celebration Modal -->
+            <div id="celebration-modal" class="celebration-modal hidden">
+                <div class="celebration-content">
+                    <div class="celebration-animation">
+                        <div class="confetti"></div>
+                        <div class="stars"></div>
+                    </div>
+                    <h2>🎉 Amazing! 🎉</h2>
+                    <p>You found all the animals!</p>
+                    <div class="reward-animation">
+                        <div class="reward-item">🍪</div>
+                        <div class="reward-item">🍰</div>
+                        <div class="reward-item">🍭</div>
+                        <div class="reward-item">🍬</div>
+                    </div>
+                    <button id="continue-btn" class="continue-btn">Play Again!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <div id="audio-container" class="hidden">
+        <!-- Audio elements will be dynamically created -->
+    </div>
+
+    <script src="scripts/game.js"></script>
+    <script src="scripts/audio.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
